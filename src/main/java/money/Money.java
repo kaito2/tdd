@@ -22,9 +22,9 @@ class Money {
         return amount + " " + currency;
     }
     static Money dollar(int amount) {
-        return new Dollar(amount, "USD");
+        return new Money(amount, "USD");
     }
-    static Franc franc(int amount) {
-        return new Franc(amount, "CHF");
+    static Money franc(int amount) {
+        return new Money(amount, "CHF");
     }
 }
