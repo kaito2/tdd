@@ -1,0 +1,6 @@
+from src.tdd.was_run import WasRun
+
+test = WasRun("testMethod")
+print(test.wasRun)
+test.run()
+print(test.wasRun)
