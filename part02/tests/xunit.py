@@ -2,17 +2,17 @@ from src.tdd.was_run import WasRun, TestCase
 
 
 class TestCaseTest(TestCase):
-    def setUp(self):
-        self.test = WasRun("testMethod")
+    def set_up(self):
+        self.test = WasRun("test_method")
 
-    def testRunning(self):
+    def test_running(self):
         self.test.run()
-        assert (self.test.wasRun)
+        assert (self.test.was_run)
 
-    def testSetUp(self):
+    def test_set_up(self):
         self.test.run()
-        assert (self.test.wasSetUp)
+        assert (self.test.was_set_up)
 
 
-TestCaseTest("testRunning").run()
-TestCaseTest("testSetUp").run()
+TestCaseTest("test_running").run()
+TestCaseTest("test_set_up").run()
