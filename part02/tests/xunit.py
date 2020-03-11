@@ -1,4 +1,4 @@
-from src.tdd.was_run import WasRun, TestCase
+from src.tdd.was_run import WasRun, TestCase, TestResult
 
 
 class TestCaseTest(TestCase):
@@ -17,7 +17,14 @@ class TestCaseTest(TestCase):
         result = test.run()
         assert ('1 run, 1 failed' == result.summary())
 
+    def test_failed_result_formatting(self):
+        result = TestResult()
+        result.test_started()
+        result.test_failed()
+        assert ('1 run, 1 failed' == result.summary())
+
 
 TestCaseTest("test_template_method").run()
 TestCaseTest("test_result").run()
-# TestCaseTest("test_failed_result").run()
+TestCaseTest("test_failed_result").run()
+TestCaseTest("test_failed_result_formatting").run()
