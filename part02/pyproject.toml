@@ -6,6 +6,7 @@ authors = ["kaito2 <kaito.iwatsuki@nislab.doshisha.ac.jp>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+mypy = "^0.770"
 
 [tool.poetry.dev-dependencies]
 
