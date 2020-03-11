@@ -5,8 +5,7 @@ class TestCase:
     def set_up(self):
         pass
 
-    def run(self):
-        result = TestResult()
+    def run(self, result):
         result.test_started()
         self.set_up()
         try:
@@ -15,7 +14,6 @@ class TestCase:
         except:
             result.test_failed()
         self.tear_down()
-        return result
 
     def tear_down(self):
         pass
@@ -34,6 +32,18 @@ class TestResult:
 
     def summary(self):
         return f"{self.run_count} run, {self.error_count} failed"
+
+
+class TestSuite:
+    def __init__(self):
+        self.tests = []
+
+    def add(self, test):
+        self.tests.append(test)
+
+    def run(self, result):
+        for test in self.tests:
+            test.run(result)
 
 
 class WasRun(TestCase):
